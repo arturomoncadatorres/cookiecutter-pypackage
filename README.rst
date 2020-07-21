@@ -35,6 +35,9 @@ The generated package files will have the following structure
     ├── .github            <- Useful files for GitHub
     │   └── ISSUE_TEMPLATE.md
     │
+    ├── data               <- Sample data.
+    │                         Nice to have for creating demos of your package.
+    │
     ├── docs               <- A default Sphinx project. See sphinx-doc.org for details.
     │
     ├── examples           <- Example use cases of your packages.
