@@ -28,6 +28,51 @@ Features
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 
+Package Files Organization
+---------------------
+The generated package files will have the following structure
+
+    ├── .github            <- Useful files for GitHub
+    │   └── ISSUE_TEMPLATE.md
+    │
+    ├── docs               <- A default Sphinx project. See sphinx-doc.org for details.
+    │
+    ├── examples           <- Example use cases of your packages.
+    │                         Perfect place for Jupyter notebooks with demos.
+    │
+    ├── tests              <- Tests
+    │
+    ├── project_dir        <- Contains the actual files of your package.
+    │                         Uses the `project_slug`
+    │
+    ├── .editorconfig
+    │
+    ├── .gitignore
+    │
+    ├── .travis.yml        <- Travis configuration
+    │
+    ├── AUTHORS.rst        <- Credits
+    │
+    ├── CONTRIBUTING.rst   <- Contribution guidelines
+    │
+    ├── HISTORY.rst        <- Version history
+    │
+    ├── LICENSE            <- See https://choosealicense.com/
+    │
+    ├── MANIFEST.in
+    │
+    ├── Makefile
+    │
+    ├── README.rst         <- The top-level README for users of the package.
+    │
+    ├── requirements_dev.txt
+    │
+    ├── setup.cfg
+    │
+    ├── setup.py
+    │
+    └── tox.ini            <- tox file with settings for running tox. See tox.testrun.org
+
 Build Status
 -------------
 
