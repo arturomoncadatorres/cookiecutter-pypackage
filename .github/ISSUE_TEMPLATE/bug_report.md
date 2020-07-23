@@ -1,5 +1,5 @@
 ---
-name: :bug: Bug report
+name: ":bug: Bug report"
 about: Create an issue to help us reproduce and fix a bug
 title: ''
 labels: 'bug'

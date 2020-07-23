@@ -1,5 +1,5 @@
 ---
-name: :bookmark_tabs: Documentation improvement
+name: ":bookmark_tabs: Documentation improvement"
 about: Help us improve the documentation
 title: ''
 labels: 'documentation'
