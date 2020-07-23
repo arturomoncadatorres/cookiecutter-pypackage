@@ -1,5 +1,5 @@
 ---
-name: ":bug: Bug report"
+name: "\U0001F41B Bug report"
 about: Create an issue to help us reproduce and fix a bug
 title: ''
 labels: 'bug'

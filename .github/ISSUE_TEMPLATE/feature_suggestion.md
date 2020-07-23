@@ -1,5 +1,5 @@
 ---
-name: ":rocket: Feature suggestion"
+name: "\U0001F680 Feature suggestion"
 about: Suggest a new idea that could make this project better
 title: ''
 labels: 'feature suggestion'
