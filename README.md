@@ -9,8 +9,8 @@ This repository contains a [Cookiecutter template](https://github.com/cookiecutt
   <a href="#man_teacher-tutorial">Tutorial</a> •
   <a href="#memo-release-checklist">Release checklist</a> •
   <a href="#card_index_dividers-package-organization">Package organization</a> •
-  <a href="#page_with_curl-how-to-use">License</a> •
-  <a href="#gift_heart-how-to-use">Contributing</a>
+  <a href="#page_with_curl-license">License</a> •
+  <a href="#gift_heart-contributing">Contributing</a>
 </p>
 
 ---------------------------------------------------------------------------
@@ -27,7 +27,7 @@ This repository contains a [Cookiecutter template](https://github.com/cookiecutt
 **Quality-of-life improvements:**
 * Updated requirements to more recent versions
 * Concentrated original documentation into this README <br>
-I think that having separate documentation for such a small project was a bit of an overkill. Thus I decided to have all the repository's documentation in this README.
+I wanted to keep things simple. I think that having separate documentation for such a small project was a bit of an overkill. Thus I decided to have all the repository's documentation in this README.
 * Added a `data` directory, together with its corresponding README <br>
 Data Science projects often require at least some basic sample data to get users started. You can put all your data files here. Moreover, you can (and should) describe them in the accompanying README.
 * Added an `examples` directory <br>
