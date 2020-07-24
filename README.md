@@ -5,18 +5,17 @@ This repository contains a [Cookiecutter template](https://github.com/cookiecutt
 
 <p align="center">
   <a href="#tada-features">Features</a> •
-  <a href="#running-quickstart">Quickstart</a> •
-  <a href="#books-documentation">Tutorial</a> •
-  <a href="#cd-installation">Release checklist</a> •
-  <a href="#tada-features">Package organization</a> •
-  <a href="#hatching_chick-how-to-use">License</a> •
-  <a href="#hatching_chick-how-to-use">Contributing</a>
+  <a href="#bulb-quickstart">Quickstart</a> •
+  <a href="#man_teacher-tutorial">Tutorial</a> •
+  <a href="#memo-release-checklist">Release checklist</a> •
+  <a href="#card_index_dividers-package-organization">Package organization</a> •
+  <a href="#page_with_curl-how-to-use">License</a> •
+  <a href="#gift_heart-how-to-use">Contributing</a>
 </p>
 
 ---------------------------------------------------------------------------
-
 ## :tada: Features
-Original features
+**Original features**
 * Testing setup with `unittest` and `python setup.py test` or `pytest`
 * [Travis-CI](https://travis-ci.org/): ready for Travis CI (Continuous Integration) testing
 * [Tox testing](http://testrun.org/tox/): setup to easily test for Python 3.6, 3.7, 3.8
@@ -25,7 +24,7 @@ Original features
 * Auto-release to [PyPI](https://pypi.org/) when you push a new tag to master (optional)
 * Command line interface using Click (optional)
 
-Quality-of-life improvements:
+**Quality-of-life improvements:**
 * Updated requirements to more recent versions
 * Concentrated original documentation into this README <br>
 I think that having separate documentation for such a small project was a bit of an overkill. Thus I decided to have all the repository's documentation in this README.
@@ -37,10 +36,10 @@ This is the perfect place to include use cases (e.g., Jupyter notebooks) where y
 * [Changed the generated project's default documentation style from Alabaster to Sphinx-rtd-theme](https://github.com/arturomoncadatorres/cookiecutter-pypackage/issues/1)
 * Added issue templates for bugs reports, documentation improvements, feature suggestions, and others.
 
-## :running: Quickstart
+## :bulb: Quickstart
 TODO
 
-## :tada: Tutorial
+## :man_teacher: Tutorial
 TODO
 
 ## :memo: Release checklist
