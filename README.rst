@@ -9,7 +9,7 @@ Cookiecutter PyPackage
 .. image:: https://travis-ci.org/audreyr/cookiecutter-pypackage.svg?branch=master
     :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
 
-Cookiecutter_ template for a Python package.
+Cookiecutter_ template for a Python (Data Science) package.
 
 * GitHub repo: https://github.com/audreyr/cookiecutter-pypackage/
 * Documentation: https://cookiecutter-pypackage.readthedocs.io/
@@ -17,7 +17,7 @@ Cookiecutter_ template for a Python package.
 
 Features
 --------
-
+Original features
 * Testing setup with ``unittest`` and ``python setup.py test`` or ``pytest``
 * Travis-CI_: Ready for Travis Continuous Integration testing
 * Tox_ testing: Setup to easily test for Python 3.5, 3.6, 3.7, 3.8
@@ -26,6 +26,17 @@ Features
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 * Command line interface using Click (optional)
 
+On top of these features, I've added a few quality of life upgrades:
+* Updated requirements to their most recent version (as of July 2020)
+* Added a data directory, together with its corresponding README. <br>
+Data Science projects often require at least some basic sample data to get users started. These data go here. Moreover, you can (and should) give a description of these
+data in the `README.md` file.
+* Added an example directory. <br>
+This is the perfect place to include use cases (such as Jupyter notebooks) where you show how your package works.
+* [Updated the project's README from .rst to .md](https://github.com/arturomoncadatorres/cookiecutter-pypackage/issues/2)
+* [Changed the project's default documentation style from Alabaster to Sphinx-rtd-theme](https://github.com/arturomoncadatorres/cookiecutter-pypackage/issues/1)
+* Created issue templates for bugs reports, documentation improvements, feature suggestions, and others.
+
 .. _Cookiecutter: https://github.com/cookiecutter/cookiecutter
 
 Package Files Organization
@@ -33,7 +44,8 @@ Package Files Organization
 The generated package files will have the following structure
 
     ├── .github            <- Useful files for GitHub
-    │   └── ISSUE_TEMPLATE.md
+    │   └── ISSUE_TEMPLATE <- Issue templates
+    │                         Templates include bug, documentation, feature, and other.
     │
     ├── data               <- Sample data.
     │                         Nice to have for creating demos of your package.
@@ -66,7 +78,7 @@ The generated package files will have the following structure
     │
     ├── Makefile
     │
-    ├── README.rst         <- The top-level README for users of the package.
+    ├── README.md          <- The top-level README for users of the package.
     │
     ├── requirements_dev.txt
     │
