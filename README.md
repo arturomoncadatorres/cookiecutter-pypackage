@@ -166,8 +166,8 @@ Now, we need to install the new project's local development requirements. We can
 ```bash
 pip install -r requirements_dev.txt
 ```
-
 *TODO: I will probably change this configuration later. I would prefer having requirement files organized a little bit more neatly.*
+
 
 ### 5. Configure Travis CI
 Afterwards, we will configure [Travis CI](https://travis-ci.org/). First, we need to do so online. Just login with your GitHub credentials, click on your profile picture and go to settings. In the section "Legacy Services Integration", you will see all your (public) repositories (the first time it might take a few minutes, be patient). Simply turn on the switch of your repository of interest.
@@ -204,7 +204,7 @@ git commit -m "Updated .travis.yml"
 git push -u origin master
 ```
 
-### 6. Configure ReadTheDocs
+### 6. Configure Read the Docs
 Login to [ReadTheDocs](https://readthedocs.org/). Click on your profile picture, which will bring you to your dashboard. Here, you can choose to import a project. Select your package repository and follow the instructions.
 
 One important thing. Do notice that the package documentation uses [Sphinx](https://www.sphinx-doc.org/en/master/), which relies on `.rst` (reStructureText) files. This format is different from (your probably familiar) `.md` (Markdown) files. While you might be tempted to switch to Markdown, [it is not advisable](https://www.ericholscher.com/blog/2016/mar/15/dont-use-markdown-for-technical-docs/). For technical documentation, it is well worth investing some time in learning how to work with `.rst` files.
@@ -225,6 +225,7 @@ If you originally chose not to have a PyUp badge (Step 2) and you changed your m
 As you might have guessed, the last step is to actually release your package to PyPI. If you are unsure, you can always try releasing it first on [TestPyPI](https://test.pypi.org/). This is a good place to use as a sandbox.
 
 *TODO: I will update this section once I have some hands on experience with the actual release. On the meantime, you can check some other [tutorials online](https://dev.to/wangonya/publishing-your-python-packages-on-testpypi-before-publishing-on-pypi-2gb2).*
+
 
 <!--
 To create releases, type in Console
@@ -297,3 +298,5 @@ Open source under the [BSD license](./LICENSE)
 
 ## :gift_heart: Contributing
 If this template doesn't match your use case, feel free to check these other [Cookiecutters for Python packages](https://github.com/audreyr/cookiecutter-pypackage#not-exactly-what-you-want). Moreover, feel free to fork the current one to create your own version. [Feedback](https://github.com/arturomoncadatorres/cookiecutter-pypackage/issues) and [pull requests](https://github.com/arturomoncadatorres/cookiecutter-pypackage/pulls) for improving this Cookiecutter are always welcome!
+
+I would love to know if you found this Cookiecutter useful or if you used it in one of your projects. [Drop me a line on Twitter (@amoncadatorres)](http://www.twitter.com/amoncadatorres)!
