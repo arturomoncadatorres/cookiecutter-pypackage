@@ -1,5 +1,5 @@
 # Cookiecutter PyPackage
-######  A Cookiecutter template for a Python (Data Science) package
+######  A Cookiecutter template for Python (Data Science) packages
 
 This repository contains a [Cookiecutter template](https://github.com/cookiecutter/cookiecutter) for creating Python packges. It is originally based on [audreyr's fantastic original `cookiecutter-pypackage`](https://github.com/audreyr/cookiecutter-pypackage/). I took the liberty of updating it using more recent tools. More importantly, I added a few quality-of-life improvements. Many of these were done with a Data Science mindset. However, this Cookiecutter can very well be used as a base for other types of projects.
 
@@ -150,7 +150,7 @@ Choosing a license for your project is important. Possible options are
 ### 3. Put files under version control in GitHub
 Next, we need to put our newly-created files under version control using GitHub. Go to GitHub and create a new repository. Make sure that the repository's name matches that defined `project_slug`.
 
-Make sure that you have [configured your SSH key properly](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account). Now, in your project's directory, open a Git Bash and type:
+Make sure that you have [configured your SSH key properly](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account). Now, in your project's directory (that is in `project_slug` and *not* in `project_slug`/`project_slug`), open a Git Bash and type:
 
 ```
 git init
