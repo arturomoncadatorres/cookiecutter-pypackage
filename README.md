@@ -28,7 +28,7 @@ This repository contains a [Cookiecutter template](https://github.com/cookiecutt
 * Updated requirements to more recent versions
 * Concentrated original documentation into this README <br>
 I wanted to keep things simple. I think that having separate documentation for such a small project was a bit of an overkill. Thus I decided to have all the repository's documentation in this README.
-* Added a `data` directory, together with its corresponding README <br>
+* Added a `datasets` directory, together with its corresponding `data` subdirectory (with a README) <br>
 Data Science projects often require at least some basic sample data to get users started. You can put all your data files here. Moreover, you can (and should) describe them in the accompanying README.
 * Added an `examples` directory <br>
 This is the perfect place to include use cases (e.g., Jupyter notebooks) where you show how your package works.
@@ -251,9 +251,6 @@ The generated package will have the following structure
     │   └── ISSUE_TEMPLATE <- Issue templates
     │                         Templates include bug, documentation, feature, and other.
     │
-    ├── data               <- Sample data.
-    │                         Nice to have for creating demos of your package.
-    │
     ├── docs               <- A default Sphinx project. See sphinx-doc.org for details.
     │
     ├── examples           <- Example use cases of your packages.
@@ -261,8 +258,10 @@ The generated package will have the following structure
     │
     ├── tests              <- Tests
     │
-    ├── project_dir        <- Contains the actual files of your package.
-    │                         Uses the `project_slug`
+    ├── project_dir        <- Contains the actual files of your package. Uses `project_slug`.
+    │   └── datasets       <- Nice to have for creating demos of your package.
+    │      └── data        <- Data files go here.
+    │          └── README.md
     │
     ├── .editorconfig
     │
@@ -291,7 +290,6 @@ The generated package will have the following structure
     ├── setup.py
     │
     └── tox.ini            <- tox file with settings for running tox. See tox.testrun.org
-
 
 ## :page_with_curl: License
 Open source under the [BSD license](./LICENSE)
