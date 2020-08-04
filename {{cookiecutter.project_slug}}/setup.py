@@ -4,6 +4,8 @@
 
 from setuptools import setup, find_packages
 
+exec(compile(open("{{ cookiecutter.project_slug }}/version.py").read(), "{{ cookiecutter.project_slug }}/version.py", "exec"))
+
 with open("README.md") as f:
     LONG_DESCRIPTION, LONG_DESC_TYPE = f.read(), "text/markdown"
 
@@ -63,6 +65,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
-    version='{{ cookiecutter.version }}',
+    version=__version__,
     zip_safe=False,
 )
