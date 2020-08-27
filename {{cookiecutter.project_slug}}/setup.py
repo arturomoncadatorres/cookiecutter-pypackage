@@ -2,7 +2,7 @@
 
 """The setup script."""
 
-from setuptools import setup, find_packages
+import setuptools
 
 exec(compile(open("{{ cookiecutter.project_slug }}/version.py").read(), "{{ cookiecutter.project_slug }}/version.py", "exec"))
 
@@ -26,7 +26,7 @@ test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest>=3',{%- end
     'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
 } %}
 
-setup(
+setuptools.setup(
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
     author_email='{{ cookiecutter.email }}',
     python_requires='>=3.5',
@@ -60,7 +60,7 @@ setup(
     include_package_data=True,
     keywords='{{ cookiecutter.project_slug }}',
     name='{{ cookiecutter.project_slug }}',
-    packages=find_packages(include=['{{ cookiecutter.project_slug }}', '{{ cookiecutter.project_slug }}.*']),
+    packages=setuptools.find_packages(include=['{{ cookiecutter.project_slug }}', '{{ cookiecutter.project_slug }}.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
