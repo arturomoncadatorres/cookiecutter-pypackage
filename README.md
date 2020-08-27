@@ -35,6 +35,7 @@ This is the perfect place to include use cases (e.g., Jupyter notebooks) where y
 * [Updated the generated project's README from .rst to .md](https://github.com/arturomoncadatorres/cookiecutter-pypackage/issues/2)
 * [Changed the generated project's default documentation style from Alabaster to Sphinx-rtd-theme](https://github.com/arturomoncadatorres/cookiecutter-pypackage/issues/1)
 * Added issue templates for bugs reports, documentation improvements, feature suggestions, and others.
+* Updated upload instructions to PyPI
 
 ## :bulb: Quickstart
 For a detailed description, see the <a href="#man_teacher-tutorial">Tutorial</a>.
@@ -211,6 +212,12 @@ One important thing. Do notice that the package documentation uses [Sphinx](http
 
 By default, your documentation will have the lovely [`sphinx-rtd-theme`](https://sphinx-rtd-theme.readthedocs.io/en/stable/). Note that you can also very easily change several [configuration options](https://sphinx-rtd-theme.readthedocs.io/en/latest/configuring.html). However, we will stick to the defaults for now.
 
+If you want to test how your documents render, you don't necessarily need to commit, push, and build your files for every change (which is a bit cumbersome). You can also do so locally. Just go to `project_slug/docs` and type
+```bash
+make html
+```
+You can see the local documentation files in `project_slug/docs/_build/html`. If you want to examine the landing page, take a look at `index.html`.
+
 
 ### 7. Configure PyUp
 PyUp is a handy tool that takes care of updating your dependencies automatically. To configure it, login to [PyUp](https://pyup.io/) using your GitHub credentials. Then, click on the button `+ Add Repo` and select your `cool-package` repository. Confirm the dialogue. After that, your PyUp badge in your `README` will be updated automatically.
@@ -221,11 +228,33 @@ If you originally chose not to have a PyUp badge (Step 2) and you changed your m
 [![PyUp](https://pyup.io/repos/github/github_username/cool-package/shield.svg)](https://pyup.io/repos/github/github_username/cool-package/)
 ```
 
-### 8. Release on (Test)PyPI
-As you might have guessed, the last step is to actually release your package to PyPI. If you are unsure, you can always try releasing it first on [TestPyPI](https://test.pypi.org/). This is a good place to use as a sandbox.
+### 8. Release on PyPI
+As you might have guessed, the last step is to actually release your package to PyPI. The proper way to do so is as [follows](https://stackoverflow.com/a/58673788/948768) (remember you need to have a [PyPI account](https://pypi.org/account/register/)):
 
-*TODO: I will update this section once I have some hands on experience with the actual release. On the meantime, you can check some other [tutorials online](https://dev.to/wangonya/publishing-your-python-packages-on-testpypi-before-publishing-on-pypi-2gb2).*
+* Create the source distribution and wheels for your package:
+```bash
+python setup.py sdist bdist_wheel
+```
+* Install `twine` (>= 2.0)
+```bash
+pip install twine
+```
+* Check your distribution files for potential errors
+```bash
+twine check dist/*
+```
+* [Optional] Upload to TestPyPI <br>
+:bulb: If you are unsure of the whole process, you can always try releasing it first on [TestPyPI](https://test.pypi.org/). This is a good place to use as a sandbox.
+```bash
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+```
+You will be asked your TestPyPI username and password.
 
+* Upload to PyPI
+```bash
+twine upload dist/*
+```
+You will be asked your PyPI username and password.
 
 <!--
 To create releases, type in Console
