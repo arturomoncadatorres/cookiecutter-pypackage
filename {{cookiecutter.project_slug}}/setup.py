@@ -4,6 +4,7 @@
 
 import setuptools
 
+# For a complete description of versioning, see https://www.python.org/dev/peps/pep-0440/
 exec(compile(open("{{ cookiecutter.project_slug }}/version.py").read(), "{{ cookiecutter.project_slug }}/version.py", "exec"))
 
 with open("README.md") as f:
@@ -30,6 +31,8 @@ setuptools.setup(
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
     author_email='{{ cookiecutter.email }}',
     python_requires='>=3.5',
+	
+	# For a complete list of classifiers, see https://pypi.org/classifiers/
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -42,6 +45,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+		'Topic :: Scientific/Engineering :: Artificial Intelligence',
     ],
     description="{{ cookiecutter.project_short_description }}",
     {%- if 'no' not in cookiecutter.command_line_interface|lower %}
