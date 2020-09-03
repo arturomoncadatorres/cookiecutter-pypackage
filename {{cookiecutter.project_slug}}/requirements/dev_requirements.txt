@@ -1,3 +1,9 @@
+# Install base requirements.
+-r base_requirements.txt
+
+# Install {{ cookiecutter.full_name }} as editable dependency in develop mode
+-e .
+
 pip==20.1.1
 bump2version==1.0.0
 wheel==0.34.2
@@ -5,9 +11,8 @@ watchdog==0.10.3
 flake8==3.8.3
 tox==3.17.1
 coverage==5.2
-Sphinx==3.1.2
-sphinx-rtd-theme>=0.5.0
 twine==3.2.0
+
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
 Click==7.0{% endif %}
 {% if cookiecutter.use_pytest == 'y' -%}

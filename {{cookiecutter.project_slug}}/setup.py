@@ -13,8 +13,9 @@ with open("README.md") as f:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [{%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=7.0',{%- endif %} ]
-
+with open("requirements/base_requirements.txt") as f:
+    REQUIREMENTS = f.read().splitlines()
+	
 setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %} ]
 
 test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest>=3',{%- endif %} ]
@@ -55,7 +56,7 @@ setuptools.setup(
         ],
     },
     {%- endif %}
-    install_requires=requirements,
+    install_requires=REQUIREMENTS,
 {%- if cookiecutter.open_source_license in license_classifiers %}
     license="{{ cookiecutter.open_source_license }}",
 {%- endif %}
