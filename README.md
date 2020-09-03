@@ -32,6 +32,7 @@ I wanted to keep things simple. I think that having separate documentation for s
 Data Science projects often require at least some basic sample data to get users started. You can put all your data files here. Moreover, you can (and should) describe them in the accompanying README.
 * Added an `examples` directory <br>
 This is the perfect place to include use cases (e.g., Jupyter notebooks) where you show how your package works.
+* Improved requirements definition by separating them into different files (`base`, `dev`, `doc`).
 * [Updated the generated project's README from .rst to .md](https://github.com/arturomoncadatorres/cookiecutter-pypackage/issues/2)
 * [Changed the generated project's default documentation style from Alabaster to Sphinx-rtd-theme](https://github.com/arturomoncadatorres/cookiecutter-pypackage/issues/1)
 * Added issue templates for bugs reports, documentation improvements, feature suggestions, and others.
