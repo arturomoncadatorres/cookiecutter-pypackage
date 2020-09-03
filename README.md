@@ -284,16 +284,23 @@ The generated package will have the following structure
     ├── examples           <- Example use cases of your packages.
     │                         Perfect place for Jupyter notebooks with demos.
     │
-    ├── tests              <- Tests
-    │
     ├── project_dir        <- Contains the actual files of your package. Uses `project_slug`.
     │   └── datasets       <- Nice to have for creating demos of your package.
     │      └── data        <- Data files go here.
     │          └── README.md
     │
+    ├── requirements       <- Contains the different requirement files.
+    │   └── base_requirements <- Base requirements for your package. Starts empty.
+    │   └── dev_requirements  <- Development requirements. Includes `base_requirements`.
+    │   └── doc_requirements  <- Document requirements. Includes `dev_requirements`.
+    │
+    ├── tests              <- Tests
+    │
     ├── .editorconfig
     │
     ├── .gitignore
+    │
+    ├── .readthedocs.yml   <- YML for better requirement handling in Read the Docs.
     │
     ├── .travis.yml        <- Travis configuration
     │
@@ -310,8 +317,6 @@ The generated package will have the following structure
     ├── Makefile
     │
     ├── README.md          <- The top-level README for users of the package.
-    │
-    ├── requirements_dev.txt
     │
     ├── setup.cfg
     │
