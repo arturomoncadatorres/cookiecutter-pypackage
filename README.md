@@ -48,7 +48,7 @@ cookiecutter https://github.com/arturomoncadatorres/cookiecutter-pypackage.git
 * Put files under version control in GitHub
 * Install the project's local development requirements
 ```
-pip install -r requirements_dev.txt
+pip install -r ./requirements/dev_requirements.txt
 ```
 * [Configure Travis CI](https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci-using-github). Make sure to encrypt your password:
 ```
@@ -166,10 +166,8 @@ git push -u origin master
 Now, we need to install the new project's local development requirements. We can do so by typing:
 
 ```bash
-pip install -r requirements_dev.txt
+pip install -r ./requirements/dev_requirements.txt
 ```
-*TODO: I will probably change this configuration later. I would prefer having requirement files organized a little bit more neatly.*
-
 
 ### 5. Configure Travis CI
 Afterwards, we will configure [Travis CI](https://travis-ci.org/). First, we need to do so online. Just login with your GitHub credentials, click on your profile picture and go to settings. In the section "Legacy Services Integration", you will see all your (public) repositories (the first time it might take a few minutes, be patient). Simply turn on the switch of your repository of interest.
