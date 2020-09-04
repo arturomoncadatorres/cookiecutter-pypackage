@@ -4,9 +4,6 @@
 
 import setuptools
 
-# For a complete description of versioning, see https://www.python.org/dev/peps/pep-0440/
-exec(compile(open("{{ cookiecutter.project_slug }}/version.py").read(), "{{ cookiecutter.project_slug }}/version.py", "exec"))
-
 with open("README.md") as f:
     LONG_DESCRIPTION, LONG_DESC_TYPE = f.read(), "text/markdown"
 
@@ -70,6 +67,6 @@ setuptools.setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
-    version=__version__,
+    version=0.1.0, # For a complete description of versioning, see https://www.python.org/dev/peps/pep-0440/
     zip_safe=False,
 )
