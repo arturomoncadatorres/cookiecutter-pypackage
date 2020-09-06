@@ -1,6 +1,9 @@
 .PHONY: clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
 
+#$(info $(SHELL))
+#$(info $(PATH))
+
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
 
@@ -82,7 +85,9 @@ servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
 release: dist ## package and upload a release
+	twine check dist/*
 	twine upload dist/*
+	clean
 
 dist: clean ## builds source and wheel package
 	python setup.py sdist
