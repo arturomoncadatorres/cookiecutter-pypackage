@@ -290,7 +290,7 @@ After the first version of your package (`0.1.0` if you stuck to the defaults) i
   bump2version patch ./project_slug/version.py
   ```
 
-  This command will update the version number in all necessary files (e.g., `setup.py`, `__init.py__`) plus in all additional files we wish (e.g., `version.py`). If you want to be more specific on the version you are replacing and the new version you are releasing, you can do:
+  This command will update the version number in all necessary files (e.g., `setup.py`, `setup.cfg`, `__init.py__`) plus in all additional files we wish (e.g., `version.py`). If you want to be more specific on the version you are replacing and the new version you are releasing, you can do:
 
   ```bash
   bump2version --current-version 0.1.0 --new-version 0.1.1 patch ./project_slug/version.py
@@ -315,7 +315,7 @@ After the first version of your package (`0.1.0` if you stuck to the defaults) i
       ```
       You will be asked your PyPI username and password.
 
-    This method is very simple and straightforward. However, it has the disadvantage that you won't see the release in GitHub's `project_slug/releases`. If you wish to do so, you will have to the release by hand.
+    This method is very simple and straightforward. However, it has the disadvantage that you won't see the release in GitHub's `project_slug/releases`. If you wish to do so, you will have to add it by hand.
 
   * **Using Travis**
 
@@ -385,8 +385,11 @@ The generated package will have the following structure
     └── tox.ini            <- tox file with settings for running tox. See tox.testrun.org
 
 ## :bomb: Troubleshooting
-* My `Makefile` commands don't work <br>
-If you are on a Windows prompt, this is probably because Windows doesn't recognize many of the commands (e.g., `rm`, `find`). This can be solved by [adding Git's bin directory (e.g., `C:\Program Files\Git\usr\bin`) to your `PATH` variable](https://stackoverflow.com/a/46816749/948768). Moreover, make sure that you have [Cygwin installed](https://cygwin.com/install.html) (including the `findutils` package, usually installed by default) and that [its directory (e.g., `C:\cygwin64\bin`) is also part of your `PATH` variable](https://stackoverflow.com/a/10840077/948768).
+* I am on Windows and my `Makefile` commands don't work <br>
+This is probably because Windows doesn't recognize many of the commands (e.g., `rm`, `find`). This can be solved by [adding Git's bin directory (e.g., `C:\Program Files\Git\usr\bin`) to your `PATH` variable](https://stackoverflow.com/a/46816749/948768). Moreover, make sure that you have [Cygwin installed](https://cygwin.com/install.html) (including the `findutils` package, usually installed by default), that [its directory (e.g., `C:\cygwin64\bin`) is also part of your `PATH` variable](https://stackoverflow.com/a/10840077/948768), and that it is high on the environment variable list to that it is given higher priority that the Windows's.
+
+* I updated my package on PyPI. However, its badge on the `README` still shows the older version. <br>
+PyPI badges take some time to update. It will do so automatically in a few minutes. If you want to be absolutely sure of which version is being distributed, go directly to your project's PyPI page.
 
 ## :page_with_curl: License
 Open source under the [BSD license](./LICENSE)
