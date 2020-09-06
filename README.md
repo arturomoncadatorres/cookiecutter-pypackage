@@ -227,50 +227,110 @@ If you originally chose not to have a PyUp badge (Step 2) and you changed your m
 [![PyUp](https://pyup.io/repos/github/github_username/cool-package/shield.svg)](https://pyup.io/repos/github/github_username/cool-package/)
 ```
 
-### 8. Release on PyPI
-As you might have guessed, the last step is to actually release your package to PyPI. The proper way to do so is as [follows](https://stackoverflow.com/a/58673788/948768) (remember you need to have a [PyPI account](https://pypi.org/account/register/)):
+### 8. First release on PyPI
+As you might have guessed, the last step is to actually release your package to PyPI. We will do so [the proper way](https://stackoverflow.com/a/58673788/948768) in two different ways, first on TestPyPI and then on PyPI. For both cases, you will need:
+
+* A [TestPyPI](https://test.pypi.org/account/register/) or a [PyPI account](https://pypi.org/account/register/), respectively.
+* `twine` (>= 2.0). If you don't have it, you can install it using pip:
+```bash
+pip install twine
+```
+
+#### Releasing on TestPyPI
+If this is the first time you are publishing a package, I strongly suggest you first do so on TestPyPI. In this case and for didactic reasons, we will perform all steps one by one:
 
 * Create the source distribution and wheels for your package:
 ```bash
 python setup.py sdist bdist_wheel
 ```
-* Install `twine` (>= 2.0)
-```bash
-pip install twine
-```
 * Check your distribution files for potential errors
 ```bash
 twine check dist/*
 ```
-* [Optional] Upload to TestPyPI <br>
-:bulb: If you are unsure of the whole process, you can always try releasing it first on [TestPyPI](https://test.pypi.org/). This is a good place to use as a sandbox.
+* Upload to TestPyPI <br>
 ```bash
 twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 ```
 You will be asked your TestPyPI username and password.
 
-* Upload to PyPI
+#### Releasing on PyPI
+If you have some experience with publishing packages, you can publish your package directly to PyPI. Fortunately, the included `Makefile` makes this process very simple:
+
 ```bash
-twine upload dist/*
+make release
 ```
 You will be asked your PyPI username and password.
 
-<!--
-To create releases, type in Console
 
-```bash
-bump2version patch
-git push --tags
-```
+### 9. Subsequent releases on PyPI
+After the first version of your package (`0.1.0` if you stuck to the defaults) is up, you will probably want to keep working on it, improving it, and adding more features. At some point, you will want to update its PyPI release. To do so, follow these steps:
 
-This will result in:
-cool-package 0.1.1 showing up in your GitHub tags/releases page
-cool-package 0.1.1 getting released on PyPI
-You can also replace patch with minor or major.
--->
+* Go through the :memo: Release Checklist. This helps you make sure you don't miss anything.
 
-## :memo: Release checklist
-TODO:
+  :ballot_box_with_check: Update all your package files with the new functionality. If you were working on a branch, merge it to `master`.
+
+  :ballot_box_with_check: Update `HISTORY.rst` with the proper change log.
+
+  :ballot_box_with_check: Commit and push the changes (i.e., make sure your tracked files have no uncommitted changes)
+
+  ```bash
+  git commit -m "Changelog for upcoming release 0.1.1."
+  git push -u origin master
+  ```
+
+* Use `bump2version` to increase the version of your package. I recommend you follow the semantic versioning described in the [PEP 440](https://www.python.org/dev/peps/pep-0440/). In (very) short:
+
+  * 0.1.0 --> 0.1.1 is a `patch`
+  * 0.1.0 --> 0.2.0 is a `minor`
+  * 0.1.0 --> 1.0.0 is a `major`
+
+  For this example, we will suppose a `patch`
+
+  ```bash
+  bump2version patch ./project_slug/version.py
+  ```
+
+  This command will update the version number in all necessary files (e.g., `setup.py`, `__init.py__`) plus in all additional files we wish (e.g., `version.py`). If you want to be more specific on the version you are replacing and the new version you are releasing, you can do:
+
+  ```bash
+  bump2version --current-version 0.1.0 --new-version 0.1.1 patch ./project_slug/version.py
+  ```  
+
+* Push to GitHub
+
+  ```bash
+  git push -u origin master
+  ```
+
+  This will update the change of version in the different files done by `bump2version`. You will see this in GitHub as `Bump version: 0.1.0 → 0.1.1`.
+
+* From here, you can update your PyPI release in two different ways:
+
+  * **By "hand"**
+
+    * Upload the distribution files to PyPI, similarly to step 8. Again, using the included `Makefile`:
+
+      ```bash
+      make release
+      ```
+      You will be asked your PyPI username and password.
+
+    This method is very simple and straightforward. However, it has the disadvantage that you won't see the release in GitHub's `project_slug/releases`. If you wish to do so, you will have to the release by hand.
+
+  * **Using Travis**
+
+      * `bump2version` creates a tag in its commit which corresponds to the desired version. We can push it to GitHub:
+
+      ```bash
+      git push --tags
+      ```
+
+     Once pushed, Travis will run its build and if successful, will show the information in GitHub's tags/releases and release it to PyPI.
+
+     This method sounds very convenient. However, it depends on Travis running properly. Of course, this is always desired, but even the smallest error will stop the deployment to PyPI.
+
+ Choose whichever method works better for you. If you choose Travis, don't underestimate the errors that might pop up there! These might actually affect the proper functioning of your package.
+
 
 ## :card_index_dividers: Package organization
 The generated package will have the following structure
@@ -323,6 +383,10 @@ The generated package will have the following structure
     ├── setup.py
     │
     └── tox.ini            <- tox file with settings for running tox. See tox.testrun.org
+
+## :bomb: Troubleshooting
+* My `Makefile` commands don't work <br>
+If you are on a Windows prompt, this is probably because Windows doesn't recognize many of the commands (e.g., `rm`, `find`). This can be solved by [adding Git's bin directory (e.g., `C:\Program Files\Git\usr\bin`) to your `PATH` variable](https://stackoverflow.com/a/46816749/948768). Moreover, make sure that you have [Cygwin installed](https://cygwin.com/install.html) (including the `findutils` package, usually installed by default) and that [its directory (e.g., `C:\cygwin64\bin`) is also part of your `PATH` variable](https://stackoverflow.com/a/10840077/948768).
 
 ## :page_with_curl: License
 Open source under the [BSD license](./LICENSE)
