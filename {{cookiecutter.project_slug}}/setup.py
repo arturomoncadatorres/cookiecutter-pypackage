@@ -62,7 +62,7 @@ setuptools.setup(
     include_package_data=True,
     keywords='{{ cookiecutter.project_slug }}',
     name='{{ cookiecutter.project_slug }}',
-    packages=setuptools.find_packages(include=['{{ cookiecutter.project_slug }}', '{{ cookiecutter.project_slug }}.*']),
+    packages=setuptools.find_namespace_packages(include=['{{ cookiecutter.project_slug }}', '{{ cookiecutter.project_slug }}.*'], exclude=["*.tests", "*.tests.*"]),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
