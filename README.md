@@ -269,7 +269,7 @@ After the first version of your package (`0.1.0` if you stuck to the defaults) i
 
   :ballot_box_with_check: Update all your package files with the new functionality. If you were working on a branch, merge it to `master`.
 
-  :ballot_box_with_check: Update `HISTORY.rst` with the proper change log.
+  :ballot_box_with_check: Update `HISTORY.rst` with the proper change log (and maybe your `README`, if you want to feature the new changes).
 
   :ballot_box_with_check: Commit and push the changes (i.e., make sure your tracked files have no uncommitted changes)
 
