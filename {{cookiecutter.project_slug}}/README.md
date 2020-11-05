@@ -1,7 +1,7 @@
 # {{ cookiecutter.project_name }}
 ######  {{ cookiecutter.project_short_description }}
 {% if is_open_source %}
-[![PyPI](https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg)](https://pypi.python.org/pypi/{{ cookiecutter.project_slug }})
+[![PyPI version](https://badge.fury.io/py/{{ cookiecutter.project_slug }}.svg)](https://badge.fury.io/py/{{ cookiecutter.project_slug }})
 [![Build Status](https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.svg?branch=master)](https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }})
 [![Documentation](https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest)](https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest)
 {%- endif %}
@@ -15,7 +15,7 @@ A long description of your package goes here.
 * Features
 * of
 * your
-* cool 
+* cool
 * package
 
 {% if is_open_source %}
