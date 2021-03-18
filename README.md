@@ -9,6 +9,7 @@ This repository contains a [Cookiecutter template](https://github.com/cookiecutt
   <a href="#man_teacher-tutorial">Tutorial</a> •
   <a href="#memo-release-checklist">Release checklist</a> •
   <a href="#card_index_dividers-package-organization">Package organization</a> •
+  <a href="#bomb-troubleshooting">Troubleshooting</a> •
   <a href="#page_with_curl-license">License</a> •
   <a href="#gift_heart-contributing">Contributing</a>
 </p>
