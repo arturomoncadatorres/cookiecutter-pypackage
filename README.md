@@ -170,6 +170,12 @@ Now, we need to install the new project's local development requirements. We can
 pip install -r ./requirements/dev_requirements.txt
 ```
 
+> If you get the error `ERROR: Could not install packages due to an OSError: [WinError 5] Access is denied`, try doing the install with the `--user` option. That is:
+> 
+> ```bash
+> pip install -r ./requirements/dev_requirements.txt --user
+> ```
+
 ### 5. Configure Travis CI
 Afterwards, we will configure [Travis CI](https://travis-ci.org/). First, we need to do so online. Just login with your GitHub credentials, click on your profile picture and go to settings. In the section "Legacy Services Integration", you will see all your (public) repositories (the first time it might take a few minutes, be patient). Simply turn on the switch of your repository of interest.
 
