@@ -392,10 +392,12 @@ The generated package will have the following structure
     └── tox.ini            <- tox file with settings for running tox. See tox.testrun.org
 
 ## :bomb: Troubleshooting
-* I am on Windows and my `Makefile` commands don't work <br>
-This is probably because Windows doesn't recognize many of the commands (e.g., `rm`, `find`). This can be solved by [adding Git's bin directory (e.g., `C:\Program Files\Git\usr\bin`) to your `PATH` variable](https://stackoverflow.com/a/46816749/948768). Moreover, make sure that you have [Cygwin installed](https://cygwin.com/install.html) (including the `findutils` package, usually installed by default), that [its directory (e.g., `C:\cygwin64\bin`) is also part of your `PATH` variable](https://stackoverflow.com/a/10840077/948768), and that it is high on the environment variable list to that it is given higher priority that the Windows's.
+* *I am on Windows and my `Makefile` commands don't work* <br>
+This is probably because Windows doesn't recognize many of the commands (e.g., `rm`, `find`). This can be solved by [adding Git's bin directory (e.g., `C:\Program Files\Git\usr\bin`) to your `PATH` variable](https://stackoverflow.com/a/46816749/948768). Then, you can install `make` using [`chocolatey`](https://stackoverflow.com/a/54086635/948768).
 
-* I updated my package on PyPI. However, its badge on the `README` still shows the older version. <br>
+  Previously, I recommended installing [Cygwin installed](https://cygwin.com/install.html) (with its corresponding `findutils` and `make` packages) and making sure that [its directory (e.g., `C:\cygwin64\bin`) was part of your `PATH` variable](https://stackoverflow.com/a/10840077/948768). However, I recently had a lot of issues getting it to work, so I definitely recommen trying `chocolatey` first.
+
+* *I updated my package on PyPI. However, its badge on the `README` still displays the older version.* <br>
 PyPI badges take some time to update. It will do so automatically in a few minutes. If you want to be absolutely sure of which version is being distributed, go directly to your project's PyPI page.
 
 ## :page_with_curl: License
