@@ -22,7 +22,7 @@ This repository contains a [Cookiecutter template](https://github.com/cookiecutt
 * [Tox testing](http://testrun.org/tox/): setup to easily test for Python 3.6, 3.7, 3.8
 * [Sphinx docs](https://www.sphinx-doc.org/en/master/): documentation ready for generation with [Read the Docs](https://readthedocs.org/)
 * [`bump2version`](https://github.com/c4urself/bump2version): pre-configured version bumping with a single command
-* Auto-release to [PyPI](https://pypi.org/) when you push a new tag to master (optional)
+* Auto-release to [PyPI](https://pypi.org/) when you push a new tag to `main` (former known as `master`) (optional)
 * Command line interface using Click (optional)
 
 **Quality-of-life improvements:**
@@ -160,7 +160,7 @@ git init
 git remote add origin git@github.com/github_username/cool-package.git
 git add .
 git commit -m "Initial commit"
-git push -u origin master
+git push -u origin main
 ```
 
 ### 4. Install requirements
@@ -197,7 +197,7 @@ Check if the installation was successful by typing
 travis version
 ```
 
-Finally, we need to encrypt our PyPI password in the Travis configuration. Moreover, we also need to automate deployment on PyPI when pushing a new tag to the master branch. To do this, we need to type in the console
+Finally, we need to encrypt our PyPI password in the Travis configuration. Moreover, we also need to automate deployment on PyPI when pushing a new tag to the main branch. To do this, we need to type in the console
 
 ```
 travis encrypt password --add deploy.password
@@ -208,7 +208,7 @@ You will get asked if you want to rewrite the contents of `.travis.yml`. Say yes
 ```
 git add .travis.yml
 git commit -m "Updated .travis.yml"
-git push -u origin master
+git push -u origin main
 ```
 
 ### 6. Configure Read the Docs
@@ -274,7 +274,7 @@ After the first version of your package (`0.1.0` if you stuck to the defaults) i
 
 * Go through the :memo: Release Checklist. This helps you make sure you don't miss anything.
 
-  :ballot_box_with_check: Update all your package files with the new functionality. If you were working on a branch, merge it to `master`.
+  :ballot_box_with_check: Update all your package files with the new functionality. If you were working on a branch, merge it to `main`.
 
   :ballot_box_with_check: Update `HISTORY.rst` with the proper change log (and maybe your `README`, if you want to feature the new changes).
 
@@ -282,7 +282,7 @@ After the first version of your package (`0.1.0` if you stuck to the defaults) i
 
   ```bash
   git commit -m "Changelog for upcoming release 0.1.1."
-  git push -u origin master
+  git push -u origin main
   ```
 
 * Use `bump2version` to increase the version of your package. I recommend you follow the semantic versioning described in the [PEP 440](https://www.python.org/dev/peps/pep-0440/). In (very) short:
@@ -306,7 +306,7 @@ After the first version of your package (`0.1.0` if you stuck to the defaults) i
 * Push to GitHub
 
   ```bash
-  git push -u origin master
+  git push -u origin main
   ```
 
   This will update the change of version in the different files done by `bump2version`. You will see this in GitHub as `Bump version: 0.1.0 → 0.1.1`.
